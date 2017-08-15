@@ -4073,7 +4073,8 @@ h3 {
       margin-top: 20px; }
 
 .tickets-advert {
-  background: url("../img/tickets-advertising_bg_1440.jpg") center/cover;
+  background: url("../img/tickets-advertising_bg_1440.jpg") center;
+  background-size: cover;
   background-attachment: fixed;
   position: relative;
   max-width: 100%; }
