@@ -4093,7 +4093,7 @@ h3 {
             justify-content: center;
     max-width: 1440px;
     margin: 0 auto; }
-  .tickets-advert::before {
+  /* .tickets-advert::before {
     position: absolute;
     content: '';
     top: 0;
@@ -4102,7 +4102,7 @@ h3 {
     bottom: 0;
     height: 100%;
     width: 100%;
-    background: rgba(216, 41, 30, 0.75); }
+    background: rgba(216, 41, 30, 0.75); } */
   .tickets-advert__cont {
     display: -webkit-box;
     display: -webkit-flex;
