@@ -3258,7 +3258,8 @@ h3 {
     height: 80px;
     margin: auto;
     max-width: 1440px;
-    padding: 0 72px; }
+    padding: 0 72px;
+    position: relative; }
   .header__logo {
     margin-right: auto;
     outline: none; }
@@ -3291,6 +3292,32 @@ h3 {
     position: relative;
     cursor: pointer;
     display: none; }
+    .header__nav-toggle .nav-toggle-line {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #f2f2f2;
+      display: block; }
+      .header__nav-toggle .nav-toggle-line:nth-child(1) {
+        top: 0;
+        opacity: 1;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
+      .header__nav-toggle .nav-toggle-line:nth-child(2) {
+        top: 8px;
+        opacity: 1;
+        -webkit-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+        -webkit-transition-delay: .4s;
+             -o-transition-delay: .4s;
+                transition-delay: .4s; }
+      .header__nav-toggle .nav-toggle-line:nth-child(3) {
+        bottom: 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
     .header__nav-toggle.active .nav-toggle-line:nth-child(1) {
       top: 8px;
       opacity: 1;
@@ -3320,32 +3347,35 @@ h3 {
       -webkit-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
               transform: rotate(-45deg); }
-    .header__nav-toggle .nav-toggle-line {
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: #f2f2f2;
-      display: block; }
-      .header__nav-toggle .nav-toggle-line:nth-child(1) {
-        top: 0;
-        opacity: 1;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s; }
-      .header__nav-toggle .nav-toggle-line:nth-child(2) {
-        top: 8px;
-        opacity: 1;
-        -webkit-transition: .5s;
-        -o-transition: .5s;
-        transition: .5s;
-        -webkit-transition-delay: .4s;
-             -o-transition-delay: .4s;
-                transition-delay: .4s; }
-      .header__nav-toggle .nav-toggle-line:nth-child(3) {
-        bottom: 0;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s; }
+  .header .header-mobile {
+    background: #f2f2f2;
+    width: 50vw;
+    height: -webkit-calc(100vh - 80px);
+    height: calc(100vh - 80px);
+    position: absolute;
+    right: -4000px;
+    top: 80px;
+    color: #d8291e;
+    text-align: end;
+    padding: 19px 4%;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out; }
+    .header .header-mobile .nav-mobile {
+      margin-bottom: 60px; }
+      .header .header-mobile .nav-mobile li {
+        margin: 0 0 30px;
+        font-size: 24px; }
+    .header .header-mobile .lang-mobile {
+      text-transform: uppercase; }
+      .header .header-mobile .lang-mobile li {
+        margin: 0 0 30px;
+        font-size: 24px; }
+    .header .header-mobile.active {
+      right: 0;
+      -webkit-transition: .2s ease;
+      -o-transition: .2s ease;
+      transition: .2s ease; }
 
 /* MAIN */
 .main {
@@ -3375,13 +3405,10 @@ h3 {
     -webkit-transform: translateX(-50%) translateY(-50%);
         -ms-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     width: auto;
     height: auto;
-    background: url(..img/main_bg_1440.img) no-repeat;
-    -webkit-background-size: cover;
-            background-size: cover;
     z-index: -1; }
   .main__title {
     display: -webkit-box;
@@ -4025,8 +4052,6 @@ h3 {
     margin-left: 10px;
     margin-right: 123px;
     position: relative; }
-    .schedule__icon:last-child::after {
-      display: none; }
     .schedule__icon::before {
       content: '';
       position: absolute;
@@ -4039,10 +4064,13 @@ h3 {
       content: '';
       position: absolute;
       width: 1px;
-      height: 115px;
+      height: 5em;
       background: #c4c4c4;
       top: 88px;
       left: 50%; }
+    .schedule__icon:last-child::after {
+      height: 3em;
+      background: white; }
     .schedule__icon.coffee {
       background: #828282; }
   .schedule .events {
@@ -4073,8 +4101,7 @@ h3 {
       margin-top: 20px; }
 
 .tickets-advert {
-  background: url("../img/tickets-advertising_bg_1440.jpg") center;
-  background-size: cover;
+  background: url("../img/main_bg_1440.jpg") center/cover;
   background-attachment: fixed;
   position: relative;
   max-width: 100%; }
@@ -4093,8 +4120,9 @@ h3 {
         -ms-flex-pack: center;
             justify-content: center;
     max-width: 1440px;
-    margin: 0 auto; }
-  /* .tickets-advert::before {
+    margin: 0 auto;
+    text-align: center; }
+  .tickets-advert::before {
     position: absolute;
     content: '';
     top: 0;
@@ -4103,7 +4131,7 @@ h3 {
     bottom: 0;
     height: 100%;
     width: 100%;
-    background: rgba(216, 41, 30, 0.75); } */
+    background: rgba(216, 41, 30, 0.65); }
   .tickets-advert__cont {
     display: -webkit-box;
     display: -webkit-flex;
@@ -4129,7 +4157,6 @@ h3 {
       margin-bottom: 30px; }
     .tickets-advert__cont p {
       width: 480px;
-      text-align: center;
       margin-bottom: 60px;
       line-height: 1.2; }
     .tickets-advert__cont .left {
@@ -4160,8 +4187,9 @@ h3 {
   .footer__wrapper {
     color: #f2f2f2;
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    grid-template: 1fr 1fr/repeat(5, auto);
     grid-row-gap: 69px;
+    grid-column-gap: 1em;
     -webkit-box-align: end;
     -webkit-align-items: end;
         -ms-flex-align: end;
@@ -4184,6 +4212,10 @@ h3 {
             justify-content: space-between; }
   .footer__social {
     grid-column: 5 / 6;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    margin-left: auto;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4244,10 +4276,12 @@ h3 {
     font-weight: 500;
     color: #bdbdbd;
     font-style: normal;
-    line-height: 20px; }
+    line-height: 20px;
+    white-space: nowrap; }
   .footer .made-by {
     color: #bdbdbd;
-    margin-left: auto; }
+    margin-left: auto;
+    white-space: nowrap; }
 
 /* **************** */
 /* COMPETITION PAGE */
@@ -4259,6 +4293,8 @@ h3 {
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); }
   .competition__header__wrapper {
     color: #d8291e; }
+  .competition__header .competition__header__nav-toggle span {
+    background: #d8291e; }
 
 /* COMPETITION */
 .compet {
@@ -4568,8 +4604,10 @@ h3 {
     margin-bottom: 40px; }
   .tickets__point {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr 1fr;
-    grid-row-gap: 100px;
+    grid-template: minmax(-webkit-min-content, auto)/repeat(auto-fill, minmax(200px, 1fr));
+    grid-template: minmax(min-content, auto)/repeat(auto-fill, minmax(200px, 1fr));
+    grid-row-gap: 50px;
+    grid-column-gap: 1em;
     margin-bottom: 60px; }
     .tickets__point span {
       font-size: 24px;
@@ -4582,14 +4620,13 @@ h3 {
       margin-bottom: 4px; }
 
 @media screen and (max-width: 1440px) {
+  section p {
+    font-size: 16px; }
   /* ABOUT */
   .about__desc p {
     font-size: 16px; }
   /* ORG */
   .org__desc p {
-    font-size: 16px; }
-  /* COMPETITION-ABOUT */
-  section p {
     font-size: 16px; } }
 
 @media screen and (max-width: 1280px) {
@@ -4608,12 +4645,30 @@ h3 {
   /* LECTURERS */
   .lect__tabs {
     width: 90%; }
-  /* judges */
-  .judges__tabs {
-    width: 90%; }
   /* SCHEDULE */
   .schedule__cont__wrapper {
-    width: 80%; } }
+    width: 80%; }
+  /* JUDGES */
+  .judges__tabs {
+    width: 90%; }
+  /* FOOTER */
+  .footer__wrapper {
+    grid-template: 1fr 1fr 1r/repeat(5, auto);
+    grid-row-gap: 1.5em; }
+  .footer__nav li {
+    margin-right: 25px; }
+  .footer .tickets-contacts {
+    grid-row: 3;
+    grid-column: 1 / 3; }
+  .footer .emails {
+    grid-row: 3;
+    grid-column: 2 / 3; }
+  .footer .address {
+    grid-row: 3;
+    grid-column: 3 / 5; }
+  .footer .made-by {
+    grid-row: 3;
+    grid-column: -1 / -2; } }
 
 @media screen and (max-width: 992px) {
   /* ORG */
@@ -4658,7 +4713,12 @@ h3 {
     .lect__about p {
       min-height: 0;
       max-width: 100%; }
-  /* judges */
+  /* SCHEDULE */
+  .schedule__cont__wrapper {
+    width: 100%; }
+  .schedule__type li {
+    width: 26%; }
+  /* JUDGES */
   .judges__tabs {
     width: 100%; }
   .judges__wrapper {
@@ -4678,12 +4738,19 @@ h3 {
     .judges__about p {
       min-height: 0;
       max-width: 100%; }
-  /* SCHEDULE */
-  .schedule__cont__wrapper {
-    width: 90%; } }
+  /* FOOTER */
+  .footer__social {
+    grid-column: -1 / -4;
+    margin-right: -25px; }
+  .footer .emails {
+    grid-row: 2;
+    grid-column: 2 / 3; }
+  .footer .address {
+    grid-row: 3;
+    grid-column: 2 / 5; } }
 
 @media screen and (max-width: 768px) {
-  section {
+  section, .footer__wrapper {
     padding: 25px 4%; }
   /* HEADER */
   .header__wrapper {
@@ -4697,6 +4764,8 @@ h3 {
     background: url(../img/main_bg_1440.jpg) center no-repeat;
     -webkit-background-size: cover;
             background-size: cover; }
+    .main__video {
+      display: none; }
   /* LECTURERS */
   .lect__type li a span {
     display: none; }
@@ -4718,7 +4787,62 @@ h3 {
               background-size: contain; }
     .lect .test li.alexander-hizhnyak_thumb {
       background: url(../img/alexander-hizhnyak_thumb.jpg) no-repeat center; }
-  /* judges */
+  /* SCHEDULE */
+  .schedule__date li {
+    width: 16%; }
+  .schedule__date::after {
+    width: 80%; }
+  .schedule__type li a span {
+    display: none; }
+  .schedule__type li a::before {
+    margin: 0;
+    display: block; }
+  .schedule__tab {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .schedule .ico {
+    display: none; }
+  /* COMPETITION-ADVERTISING */
+  .compet-advert {
+    padding-left: 0; }
+    .compet-advert__wrapper {
+      max-height: 100vh;
+      max-width: 100vw;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      position: relative;
+      padding: 0; }
+      .compet-advert__wrapper span {
+        margin-bottom: 25px; }
+    .compet-advert__img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      min-width: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin-left: 0 !important; }
+    .compet-advert__title {
+      margin: 3em 0 0; }
+      .compet-advert__title span {
+        background: rgba(242, 242, 242, 0.2);
+        text-align: center; }
+    .compet-advert__button {
+      margin: 0 auto;
+      background: #f2f2f2; }
+  /* JUDGES */
   .judges__type li a span {
     display: none; }
   .judges__type li a::before {
@@ -4744,34 +4868,61 @@ h3 {
       background: url(../img/judge_yuliya-stadnik_thumb.jpg) no-repeat center;
       -webkit-background-size: contain;
               background-size: contain; }
-  /* SCHEDULE */
-  .schedule__date li {
-    width: 15%; }
-  .schedule__date::after {
-    width: 75%; }
-  .schedule__cont__wrapper {
-    width: 100%; }
-  .schedule__type li a span {
-    display: none; }
-  .schedule__type li a::before {
-    margin: 0;
-    display: block; }
-  /* COMPETITION-ADVERTISING */
-  .compet-advert {
-    padding-left: 0; }
-    .compet-advert__wrapper {
-      padding: 0; }
-    .compet-advert__title {
-      margin: 3em 0 0; }
-      .compet-advert__title span {
-        background: rgba(242, 242, 242, 0.2);
-        text-align: center; }
-    .compet-advert__button {
-      margin: 0 auto;
-      background: #f2f2f2; }
-    .compet-advert__img {
-      grid-column: 1 / 5;
-      margin: 150px 0 0; } }
+  /* FOOTER */
+  .footer__wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center; }
+  .footer__social {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+    margin: auto;
+    border: none;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: -webkit-calc(39px - 25px);
+    margin-top: calc(39px - 25px);
+    margin-bottom: 60px; }
+    .footer__social span {
+      display: none; }
+  .footer__nav {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 66px; }
+  .footer .competition-contacts {
+    margin: auto;
+    margin-bottom: 21px; }
+  .footer .tickets-contacts {
+    margin: auto;
+    margin-bottom: 40px; }
+  .footer .emails {
+    margin: auto;
+    margin-bottom: 40px; }
+  .footer .address {
+    margin-bottom: 60px; }
+  .footer .made-by {
+    margin: auto; } }
 
 @media screen and (max-width: 568px) {
   /* MAIN */
@@ -4800,9 +4951,41 @@ h3 {
   .about__video .fotorama__nav {
     display: none; }
   .about__gallery .fotorama__nav {
-    display: none; } }
+    display: none; }
+  /* COMPETITION-ADVERTISING */
+  .compet-advert__img {
+    background-position: 0 100%;
+    -webkit-background-size: contain;
+            background-size: contain;
+    margin-left: 0; }
+  /* SCHEDULE */
+  .schedule__date li {
+    width: 17%; }
+  .schedule__date::after {
+    width: 85%; }
+  /****************/
+  /* TICKETS PAGE */
+  /****************/
+  /* TICKETS */
+  .tickets__discount {
+    padding: 15px; }
+  .tickets__point {
+    grid-row-gap: 1.5em; } }
 
 @media screen and (max-width: 480px) {
+  h2 {
+    font-size: 24px; }
+    h2::before {
+      top: -.6em;
+      left: -.5em;
+      width: 5px;
+      height: 36px; }
+  /* ORG */
+  .org__partners-inner .title {
+    font-size: 24px; }
+  /* COMPETITION-ADVERTISING */
+  .compet-advert__wrapper span {
+    font-size: 24px; }
   /* LECTURERS */
   .lect__type li {
     width: 28%; }
@@ -4811,7 +4994,37 @@ h3 {
     height: 270px; }
     .lect__img.olga-smekalina {
       background: url(../img/lectors_olga-smekalina_270.jpg) no-repeat; }
-  /* judges */
+  /* SCHEDULE */
+  .schedule__date {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 10px; }
+    .schedule__date li {
+      font-size: 16px; }
+    .schedule__date .active {
+      width: 100%;
+      background: #d8291e;
+      border: none; }
+      .schedule__date .active a {
+        color: #f2f2f2; }
+    .schedule__date::after {
+      display: none; }
+  .schedule__type li {
+    width: 28%; }
+    .schedule__type li a::before {
+      font-size: 24px; }
+  .schedule__tab {
+    padding: 4%; }
+  .schedule__about h3 {
+    font-size: 14px; }
+  .schedule__about p {
+    font-size: 12px; }
+  .schedule__about .where, .schedule__about .when {
+    font-size: 14px; }
+  /* JUDGES */
   .judges__type li {
     width: 28%; }
   .judges__img {
@@ -4821,10 +5034,17 @@ h3 {
       background: url(../img/lectors_olga-smekalina_270.jpg) no-repeat; } }
 
 @media screen and (max-width: 320px) {
+  /* COMPETITION-ADVERTISING */
+  .compet-advert__wrapper span {
+    font-size: 24px;
+    margin-bottom: 25px; }
   /* LECTURERS */
   .lect__type li {
     width: 29%; }
-  /* LECTURERS */
+  /* SCHEDULE */
+  .schedule__type li {
+    width: 29%; }
+  /* JUDGES */
   .judges__type li {
     width: 29%; } }
 
